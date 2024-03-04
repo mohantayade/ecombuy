@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { client } from "@/lib/sanity";
 import { Star, Truck } from "lucide-react";
 
+
+
 async function getData(slug: string) {
     const query = `*[_type == "product" && slug.current == "${slug}"][0] {
         _id,
@@ -21,6 +23,7 @@ async function getData(slug: string) {
 
       return data;
 }
+export const dynamic = 'force-dynamic'
 
 export default async function ProductPage({params}: {
     params : {slug : string};
